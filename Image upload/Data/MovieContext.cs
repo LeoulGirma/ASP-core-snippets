@@ -17,17 +17,7 @@ namespace Image_upload.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Movie>().HasData(
-                new Movie
-                {
-                    MovieId = 1,
-                    Title = "Avengers End Game",
-                    Gener = Genere.Action,
-                    Length = "3hr",
-                    RealeaseDate = DateTime.Today,
-                    PhotoPath ="Avengers.jpg"
-                }
-                ) ; 
+            modelBuilder.Seed();
         }
     }
 }

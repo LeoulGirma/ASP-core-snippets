@@ -12,9 +12,9 @@
  
     <div class="container" style="margin-top:4em;">
         <div class="row" >
-            <div class="col-sm-4 float-left  border-primary">
+            <div class="col-sm-4 float-left shadow-lg p-3 mb-5 bg-white rounded">
                 @* image tag helpers *@
-                <img style="object-fit: contain; height: 100%; width: 100%;" class="rounded" src="@posterPath" asp-append-version="true" alt="" />
+                <img style="object-fit: contain; height: 100%; width: 100%;" class="rounded " src="@posterPath" asp-append-version="true" alt="" />
 
                 @*<div class="imgContainer" style="background: url("~/images/Avengers.jpg") no-repeat center cover;">
 
@@ -35,7 +35,7 @@
 
                 </div>
 
-                <div class="col-sm float-right  border-secondary">
+                <div class="col-sm float-right shadow-none p-3 mb-5 bg-light rounded">
                     <h1 class="text-center">@Model.movie.Title</h1>
                     <h3>@Model.movie.Gener</h3>
                     <h3>@Model.movie.Length</h3>
