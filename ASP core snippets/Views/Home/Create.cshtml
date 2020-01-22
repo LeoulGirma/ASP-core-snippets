@@ -1,0 +1,23 @@
+﻿@model Movie
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<form enctype="multipart/form-data" asp-action="create" asp-controller="Home" method="post">
+
+    <div class="form-group">
+        <label asp-for="Title" class="col-sm-2 col-form-label"></label>
+        <input asp-for="Title" name="Email" placeholder="Email" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="RealeaseDate" class="col-sm-2 col-form-label"></label>
+        <input asp-for="RealeaseDate" type="date" name="asp"  class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Poster" class=" custom-file-label"></label>
+        <input asp-for="Poster" type="date" name="asp"  class="form-control custom-file-input" />
+    </div>
+</form>
+

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ASP core snippets", "ASP core snippets\ASP core snippets.csproj", "{D96671A7-DE07-45CD-97F2-0E64CDB00FA4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Image upload", "Image upload\Image upload.csproj", "{F3850804-CD13-4D6F-B722-78D1158B7CC0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D96671A7-DE07-45CD-97F2-0E64CDB00FA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D96671A7-DE07-45CD-97F2-0E64CDB00FA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D96671A7-DE07-45CD-97F2-0E64CDB00FA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D96671A7-DE07-45CD-97F2-0E64CDB00FA4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3850804-CD13-4D6F-B722-78D1158B7CC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3850804-CD13-4D6F-B722-78D1158B7CC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3850804-CD13-4D6F-B722-78D1158B7CC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3850804-CD13-4D6F-B722-78D1158B7CC0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {87E4BC58-72DA-447F-9ABC-0C923705F4CA}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,8 @@
+﻿
+What is Repository pattern??
+
+why use code reuse, maintainebility, clean code 
+
+loosely coupled system
+
+UNIT TESTING with mock
