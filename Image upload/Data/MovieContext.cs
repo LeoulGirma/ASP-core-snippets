@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Image_upload.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,5 +14,20 @@ namespace Image_upload.Data
 
         }
         public DbSet<Movie> Movies { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Movie>().HasData(
+                new Movie
+                {
+                    MovieId = 1,
+                    Title = "Avengers End Game",
+                    Gener = Genere.Action,
+                    Length = "3hr",
+                    RealeaseDate = DateTime.Today,
+                    PhotoPath ="Avengers.jpg"
+                }
+                ) ; 
+        }
     }
 }

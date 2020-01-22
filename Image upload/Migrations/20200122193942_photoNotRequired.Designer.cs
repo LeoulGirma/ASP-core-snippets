@@ -4,14 +4,16 @@ using Image_upload.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Image_upload.Migrations
 {
     [DbContext(typeof(MovieContext))]
-    partial class MovieContextModelSnapshot : ModelSnapshot
+    [Migration("20200122193942_photoNotRequired")]
+    partial class photoNotRequired
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -53,7 +55,6 @@ namespace Image_upload.Migrations
                             MovieId = 1,
                             Gener = 6,
                             Length = "3hr",
-                            PhotoPath = "Avengers.jpg",
                             RealeaseDate = new DateTime(2020, 1, 22, 0, 0, 0, 0, DateTimeKind.Local),
                             Title = "Avengers End Game"
                         });

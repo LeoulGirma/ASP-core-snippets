@@ -26,7 +26,6 @@ namespace Image_upload
         [Required]
         public DateTime RealeaseDate { get; set; }
 
-        [Required]
         public string PhotoPath { get; set; }
 
         //[NotMapped]

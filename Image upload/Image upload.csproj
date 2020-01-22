@@ -6,6 +6,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20200122194516_insertPhotoPath.cs" />
+    <Compile Remove="Migrations\20200122194516_insertPhotoPath.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="Data\Notes.txt" />
     <None Remove="Notes.txt" />
   </ItemGroup>
