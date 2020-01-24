@@ -24,6 +24,8 @@ namespace Image_upload
         public Genere Gener { get; set; }
 
         [Required]
+        [DataType(DataType.Date)]
+        [Display(Name = "Release Date")]
         public DateTime RealeaseDate { get; set; }
 
         public string PhotoPath { get; set; }

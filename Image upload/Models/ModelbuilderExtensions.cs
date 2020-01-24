@@ -31,6 +31,15 @@ namespace Image_upload.Models
                     Length = "3hr 30min",
                     RealeaseDate = DateTime.Today,
                     PhotoPath = "The Irishman.jpg"
+                },
+                new Movie
+                {
+                    MovieId = 3,
+                    Title = "Star Wars: The Rise of Skywalker",
+                    Gener = Genere.ScienceFiction,
+                    Length = "2hr 22min",
+                    RealeaseDate = DateTime.Today,
+                    PhotoPath = "Star wars.jpg"
                 }
                );
         }

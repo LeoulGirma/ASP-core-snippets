@@ -10,7 +10,8 @@ using System.Threading.Tasks;
 namespace Image_upload.ViewModels
 {
     // this is class was created so we dont create a navigation property not to complicate
-    // we dont want to store in db only the name of file, for simplicity for now
+    // we dont want to store the image in db only the name of file or path, for simplicity for now
+    //
     public class MovieCreateViewModel
     {
         
@@ -27,7 +28,9 @@ namespace Image_upload.ViewModels
         [Required]
 
         [Display(Name ="Release Date")]
+        [DataType(DataType.Date)]
         public DateTime RealeaseDate { get; set; }
+
 
         public IFormFile Poster { get; set; }
     }

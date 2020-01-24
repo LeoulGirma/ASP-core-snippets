@@ -42,7 +42,8 @@ namespace Image_upload.Controllers
 
         public IActionResult Index()
         {
-            return View();
+           var allMovies = _movieRepository.GetAllMovie();
+            return View(allMovies);
         }
         //content negotiation and accepet header to deal and 
         //respect those change jsonresult to object Result
@@ -78,10 +79,14 @@ namespace Image_upload.Controllers
                 string uniqueFileName = null;
                 if (movie.Poster != null)
                 {
-                    string uploadfolder = Path.Combine(HostingEnvironment.WebRootPath + "images");
+                    //get wwwroot path then combine to define were to upload
+                    // filenames with same name use guid global unique identifier, same name will overide each other
+
+                    string uploadfolder = Path.Combine(HostingEnvironment.WebRootPath , "images");
                     uniqueFileName = Guid.NewGuid().ToString() + "_" + movie.Poster.FileName;
                     string filePath = Path.Combine(uploadfolder, uniqueFileName);
 
+                    //copyto is iform file method
                     movie.Poster.CopyTo(new FileStream(filePath, FileMode.Create));
                 }
 
@@ -95,6 +100,7 @@ namespace Image_upload.Controllers
                 };
 
                 _movieRepository.Add(newMovie);
+                //??
                 return RedirectToAction("details", new { id = newMovie.MovieId });
             }
             return View();

@@ -8,6 +8,8 @@
   <ItemGroup>
     <Compile Remove="Migrations\20200122194516_insertPhotoPath.cs" />
     <Compile Remove="Migrations\20200122194516_insertPhotoPath.Designer.cs" />
+    <Compile Remove="Migrations\20200122200715_addAnotherMovie.cs" />
+    <Compile Remove="Migrations\20200122200715_addAnotherMovie.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

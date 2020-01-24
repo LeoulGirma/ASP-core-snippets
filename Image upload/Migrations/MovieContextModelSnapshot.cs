@@ -54,7 +54,7 @@ namespace Image_upload.Migrations
                             Gener = 6,
                             Length = "3hr",
                             PhotoPath = "Avengers.jpg",
-                            RealeaseDate = new DateTime(2020, 1, 22, 0, 0, 0, 0, DateTimeKind.Local),
+                            RealeaseDate = new DateTime(2020, 1, 23, 0, 0, 0, 0, DateTimeKind.Local),
                             Title = "Avengers End Game"
                         },
                         new
@@ -63,8 +63,17 @@ namespace Image_upload.Migrations
                             Gener = 6,
                             Length = "3hr 30min",
                             PhotoPath = "The Irishman.jpg",
-                            RealeaseDate = new DateTime(2020, 1, 22, 0, 0, 0, 0, DateTimeKind.Local),
+                            RealeaseDate = new DateTime(2020, 1, 23, 0, 0, 0, 0, DateTimeKind.Local),
                             Title = "The Irishman"
+                        },
+                        new
+                        {
+                            MovieId = 3,
+                            Gener = 3,
+                            Length = "2hr 22min",
+                            PhotoPath = "Star wars.jpg",
+                            RealeaseDate = new DateTime(2020, 1, 23, 0, 0, 0, 0, DateTimeKind.Local),
+                            Title = "Star Wars: The Rise of Skywalker"
                         });
                 });
 #pragma warning restore 612, 618
