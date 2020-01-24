@@ -34,6 +34,6 @@ namespace Image_upload.ViewModels
         public DateTime RealeaseDate { get; set; }
 
 
-        public List<IFormFile> Posters { get; set; }
+        public IFormFile Poster { get; set; }
     }
 }
