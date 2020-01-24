@@ -46,27 +46,8 @@
         <script>
             $(document).ready(function () {
                 $('.custom-file-input').on("change", function () {
-                    //only display one filename
-                    //var fileName = $(this).val().split("\\").pop();
-                    //$(this).next('.custom-file-label').html(fileName);
-                     /*first get the label, when file is selected
-                      * file object will be populated on that input with name and other attributes
-                      * store files object in to variable
-                      * get the name and write name/s to the label we captured before
-                      * */   
-                    var fileLabel = $(this).next('.custom-file-label');
-                    var files = $(this)[0].files;
-                    if (files.length > 1) {
-                         var fileNames = [];
-                         for (var i = 0; i < files.length; i++) {
-                            //console.log(files[i].name);
-                             fileNames.push(files[i].name);
-                             fileLabel.html(fileNames.toString())
-                        }
-                    } else {
-                        fileLabel.html(files[0].name);
-                    }
-                    //console.log(fileNames.toString());
+                    var fileName = $(this).val().split("\\").pop();
+                    $(this).next('.custom-file-label').html(fileName);
                 });
             });
         </script>
