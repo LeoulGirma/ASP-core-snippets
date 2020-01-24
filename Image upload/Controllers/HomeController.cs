@@ -9,6 +9,7 @@ using Image_upload.Models;
 using Microsoft.AspNetCore.Hosting;
 using Image_upload.ViewModels;
 using System.IO;
+using Microsoft.AspNetCore.Http;
 
 namespace Image_upload.Controllers
 {
@@ -77,17 +78,21 @@ namespace Image_upload.Controllers
             if (ModelState.IsValid)
             {
                 string uniqueFileName = null;
-                if (movie.Poster != null)
+                if (movie.Posters != null && movie.Posters.Count()>0)
                 {
-                    //get wwwroot path then combine to define were to upload
-                    // filenames with same name use guid global unique identifier, same name will overide each other
+                    foreach (IFormFile poster in movie.Posters)
+                    {
+                        //get wwwroot path then combine to define were to upload
+                        // filenames with same name use guid global unique identifier, same name will overide each other
 
-                    string uploadfolder = Path.Combine(HostingEnvironment.WebRootPath , "images");
-                    uniqueFileName = Guid.NewGuid().ToString() + "_" + movie.Poster.FileName;
-                    string filePath = Path.Combine(uploadfolder, uniqueFileName);
+                        string uploadfolder = Path.Combine(HostingEnvironment.WebRootPath, "images");
+                        uniqueFileName = Guid.NewGuid().ToString() + "_" + poster.FileName;
+                        string filePath = Path.Combine(uploadfolder, uniqueFileName);
 
-                    //copyto is iform file method
-                    movie.Poster.CopyTo(new FileStream(filePath, FileMode.Create));
+                        //copyto is iform file method
+                       poster.CopyTo(new FileStream(filePath, FileMode.Create));
+                    }
+                 
                 }
 
                 Movie newMovie = new Movie()
