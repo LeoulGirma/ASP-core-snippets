@@ -1,0 +1,59 @@
+﻿@model Image_upload.ViewModels.MovieCreateViewModel
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<form enctype="multipart/form-data" asp-action="create" asp-controller="Home" method="post">
+
+    <div class="form-group row">
+        <label asp-for="Title" class="col-sm-2 col-form-label"></label>
+        <input asp-for="Title"  placeholder="Movie Title" class="form-control col-sm-4" />
+    </div>
+    <div class="form-group row">
+        <label asp-for="Length" class="col-sm-2 col-form-label"></label>
+        <input asp-for="Length" class="form-control col-sm-4" />
+    </div>
+    <div class="form-group row">
+        <label asp-for="Gener" class="col-sm-2 col-form-label"></label>
+        <select asp-for="Gener" asp-items="Html.GetEnumSelectList<Genere>()" class="form-control col-sm-4"></select>
+    </div>
+    <div class="form-group row">
+        <label asp-for="RealeaseDate" class="col-sm-2 col-form-label"></label>
+        <input asp-for="RealeaseDate" class="form-control col-sm-4" />
+    </div>
+    <div class="form-group row">
+        <label asp-for="Poster" class="col-sm-2 col-form-label"></label>
+        <div class="col-sm-4">
+            <div class="custom-file">
+                <input asp-for="Poster" type="file" multiple name="Poster" class="form-control custom-file-input col-sm-4" />
+                <label asp-for="Poster" class="custom-file-label">Movie Poster... </label>
+
+            </div>
+        </div>
+    </div>
+    <div>
+    <button type="submit">Add</button>
+    </div>
+
+    @* Getting the name of the file selected and displying in the input label
+            first get the input whose name will change to the new selected file(but not displayed)
+        (.custom-file-input), get the name from input, then assign it to the lable
+    *@
+
+    @section Scripts{
+        <script>
+            $(document).ready(function () {
+                $('.custom-file-input').on("change", function () {
+                    var fileName = $(this).val().split("\\").pop();
+                    $(this).next('.custom-file-label').html(fileName);
+                });
+            });
+        </script>
+
+    }
+
+
+</form>
+

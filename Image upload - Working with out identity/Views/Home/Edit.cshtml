@@ -1,0 +1,80 @@
+﻿@model Image_upload.ViewModels.MovieEditViewModel
+@{
+    ViewData["Title"] = "Edit Movie";
+    var posterPath = "~/images/" + Model.ExistingPhotoPath ?? "No Poster.jpg";
+}
+
+<h1>Edit</h1>
+<div class="row">
+    <div class="col-sm-4 float-left">
+        <img src="@posterPath" style="object-fit: contain; height: 70%; width: 100%;" asp-append-version="true" />
+
+    </div>
+    <div class="col-sm-8 float-right shadow-none p-3 mb-5 bg-light rounded" style="margin-bottom:5rem;">
+
+        <form enctype="multipart/form-data" asp-action="edit" asp-controller="Home" method="post">
+            <input hidden asp-for="Id" />
+            <input hidden asp-for="ExistingPhotoPath" />
+            <div class="form-group row">
+                <label asp-for="Title" class="col-sm-2 col-form-label"></label>
+                <input asp-for="Title" placeholder="Movie Title" class="form-control col-sm-4" />
+                <sapn class="text-danger" asp-validaion-for="Title"></sapn>
+            </div>
+            <div class="form-group row">
+                <label asp-for="Length" class="col-sm-2 col-form-label"></label>
+                <input asp-for="Length" class="form-control col-sm-4" />
+                <sapn class="text-danger" asp-validaion-for="Length"></sapn>
+            </div>
+            <div class="form-group row">
+                <label asp-for="Gener" class="col-sm-2 col-form-label"></label>
+                <select asp-for="Gener" asp-items="Html.GetEnumSelectList<Genere>()" class="form-control col-sm-4"></select>
+                <sapn class="text-danger" asp-validaion-for="Gener"></sapn>
+            </div>
+            <div class="form-group row">
+                <label asp-for="RealeaseDate" class="col-sm-2 col-form-label"></label>
+                <input asp-for="RealeaseDate" class="form-control col-sm-4" />
+                <sapn class="text-danger" asp-validaion-for="RealeaseDate"></sapn>
+
+            </div>
+            <div class="form-group row">
+                <label asp-for="Poster" class="col-sm-2 col-form-label"></label>
+                <div class="col-sm-4">
+                    <div class="custom-file">
+                        <input asp-for="Poster" type="file" multiple name="Poster" class="form-control custom-file-input col-sm-4" />
+                        <label asp-for="Poster" class="custom-file-label">Click here to change Poster... </label>
+
+                    </div>
+                </div>
+            </div>
+            <div class="text-danger" asp-validation-summary="All"></div>
+            <div class="form-group-row">
+                <div class="col-sm-10">
+                    <button type="submit" class="btn btn-primary">Update</button>
+                    <a asp-controller="home" asp-action="index" class="btn btn-primary">Cancel</a>
+                </div>
+            </div>
+
+            @* Getting the name of the file selected and displying in the input label
+                    first get the input whose name will change to the new selected file(but not displayed)
+                (.custom-file-input), get the name from input, then assign it to the lable
+            *@
+
+            @section Scripts{
+                <script>
+                    $(document).ready(function () {
+                        $('.custom-file-input').on("change", function () {
+                            var fileName = $(this).val().split("\\").pop();
+                            $(this).next('.custom-file-label').html(fileName);
+                        });
+                    });
+                </script>
+
+            }
+
+
+        </form>
+
+
+    </div>
+
+</div>
