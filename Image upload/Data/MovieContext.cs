@@ -19,7 +19,8 @@ namespace Image_upload.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             //keys of identity tables are maped in onmodelcreating
-            //
+            //primary key not defined error
+            //caused by not caaling the base class on model creating method
             base.OnModelCreating(modelBuilder);
             modelBuilder.Seed();
         }
